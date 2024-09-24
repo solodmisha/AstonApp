@@ -9,7 +9,7 @@
         <module name="AstonApp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17">
+    <bytecodeTargetLevel>
       <module name="AstonApp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
