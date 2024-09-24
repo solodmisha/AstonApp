@@ -1,6 +1,6 @@
-package ru.aston;
+package ru.aston.model;
 
-import ru.aston.factort.ObjectsCreated;
+import ru.aston.model.factort.ObjectsCreated;
 
 // Класс Животное
 public class Animal implements Comparable<Animal>, ObjectsCreated {

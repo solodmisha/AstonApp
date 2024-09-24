@@ -1,4 +1,4 @@
-package ru.aston.factort;
+package ru.aston.model.factort;
 
 public interface ObjectsCreated {
 }

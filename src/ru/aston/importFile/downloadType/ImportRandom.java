@@ -5,10 +5,9 @@ import ru.aston.importFile.ImportStrategyDownloads;
 import java.io.IOException;
 import java.util.List;
 
-public class ImportFromConsole implements ImportStrategyDownloads {
+public class ImportRandom implements ImportStrategyDownloads {
     @Override
     public List<Object> store(Integer typeClass, Integer arraySize) throws IOException {
-
         return null;
     }
 }

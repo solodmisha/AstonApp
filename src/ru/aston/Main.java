@@ -1,5 +1,7 @@
 package ru.aston;
 
+import ru.aston.model.Animal;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

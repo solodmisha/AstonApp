@@ -1,7 +1,8 @@
 package ru.aston.importFile;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface ImportStrategyDownloads  {
-    void store(String object1, String object2) throws IOException;
+    List<Object> store(Integer typeClass, Integer arraySize) throws IOException;
 }

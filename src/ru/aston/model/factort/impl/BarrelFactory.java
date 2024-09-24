@@ -1,8 +1,8 @@
-package ru.aston.factort.impl;
+package ru.aston.model.factort.impl;
 
-import ru.aston.Barrel;
-import ru.aston.factort.ObjectFactory;
-import ru.aston.factort.ObjectsCreated;
+import ru.aston.model.Barrel;
+import ru.aston.model.factort.ObjectFactory;
+import ru.aston.model.factort.ObjectsCreated;
 
 import java.util.ArrayList;
 import java.util.Arrays;
