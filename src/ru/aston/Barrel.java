@@ -2,7 +2,7 @@ package ru.aston;
 
 import ru.aston.factort.ObjectsCreated;
 
-public class Barrel implements Comparable<Barrel>, ObjectsCreated {
+public class Barrel implements Sortable, ObjectsCreated {
     private final double volume;
     private final String storedMaterial;
     private final String material;
@@ -46,11 +46,6 @@ public class Barrel implements Comparable<Barrel>, ObjectsCreated {
         public Barrel build() {
             return new Barrel(this);
         }
-    }
-
-    @Override
-    public int compareTo(Barrel other) {
-        return Double.compare(this.volume, other.volume);
     }
 
     @Override

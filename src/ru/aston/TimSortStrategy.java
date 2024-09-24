@@ -21,12 +21,12 @@ public class TimSortStrategy implements SortStrategy {
 
     // Эта функция сортирует массив из левого индекса  к правому индексу,
     // размер которого не превышает RUN
-    private <T extends Comparable<T>> void insertionSort(List<T> list, int left,
+    private <T extends Sortable> void insertionSort(List<T> list, int left,
                                                          int right) {
         for (int i = left + 1; i <= right; i++) {
             T temp = list.get(i);
             int j = i - 1;
-            while (j >= left && list.get(j).compareTo(temp) > 0) {
+            while (j >= left && list.get(j).getId() > temp.getId()) {
                 list.set(j + 1, list.get(j));
                 j--;
             }
@@ -35,7 +35,7 @@ public class TimSortStrategy implements SortStrategy {
     }
 
     // Функция слияния объединяет отсортированные прогоны
-    private <T extends Comparable<T>> void merge(List<T> list, int l,
+    private <T extends Sortable> void merge(List<T> list, int l,
                                                  int m, int r) {
         // исходный массив разбит на две части: на левый и правый
         int len1 = m - l + 1, len2 = r - m;
@@ -54,7 +54,7 @@ public class TimSortStrategy implements SortStrategy {
 
         // После сравнения мы объединяем эти два массива
         while (i < len1 && j < len2) {
-            if (left.get(i).compareTo(right.get(j)) <= 0) {
+            if (left.get(i).getId() <= right.get(j).getId()) {
                 list.set(k, left.get(i));
                 i++;
             } else {
@@ -79,7 +79,7 @@ public class TimSortStrategy implements SortStrategy {
         }
     }
 
-    public <T extends Comparable<T>> void sort(List<T> list, int n) {
+    public <T extends Sortable> void sort(List<T> list, int n) {
         int minRun = minRunLength(MIN_MERGE);
 
         // Сортировка отдельных подмассивов по размеру RUN

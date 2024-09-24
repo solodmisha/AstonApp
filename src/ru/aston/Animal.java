@@ -3,7 +3,7 @@ package ru.aston;
 import ru.aston.factort.ObjectsCreated;
 
 // Класс Животное
-public class Animal implements Comparable<Animal>, ObjectsCreated {
+public class Animal implements Sortable, ObjectsCreated {
     private final String species;
     private final String eyeColor;
     private final boolean hasFur;
@@ -47,11 +47,6 @@ public class Animal implements Comparable<Animal>, ObjectsCreated {
         public Animal build() {
             return new Animal(this);
         }
-    }
-
-    @Override
-    public int compareTo(Animal other) {
-        return this.species.compareTo(other.species);
     }
 
     @Override
