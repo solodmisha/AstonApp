@@ -7,10 +7,20 @@ public class Person implements Comparable<Person>, ObjectsCreated {
     private final int age;
     private final String lastName;
 
+    private static Long count = 0L;
+    private final Long id;
+
     private Person(Builder builder) {
         this.gender = builder.gender;
         this.age = builder.age;
         this.lastName = builder.lastName;
+
+        count++;
+        this.id = getCount();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public static class Builder {
@@ -45,7 +55,16 @@ public class Person implements Comparable<Person>, ObjectsCreated {
 
     @Override
     public String toString() {
-        return "Person{gender='" + gender + "', age=" + age + ", lastName='" + lastName + "'}";
+        return "Person{" +
+                "gender='" + gender + '\'' +
+                ", age=" + age +
+                ", lastName='" + lastName + '\'' +
+                ", id=" + id +
+                '}';
+    }
+
+    private Long getCount() {
+        return count;
     }
 }
 
