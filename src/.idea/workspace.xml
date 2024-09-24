@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b8cf110-397d-4b11-ae62-0eb6b6268049" name="Changes" comment="" />
+    <list default="true" id="9f958e6e-72a1-4a18-a9d8-487f7ada5198" name="Changes" comment="unversioned files commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,7 +43,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/vladimircernenko/dev/AstonApp/src"
   }
@@ -73,5 +72,9 @@
       <updated>1727166978238</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="unversioned files commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="unversioned files commit" />
   </component>
 </project>
