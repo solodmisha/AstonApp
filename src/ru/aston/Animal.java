@@ -54,12 +54,6 @@ public class Animal implements Comparable<Animal>, ObjectsCreated {
         return this.species.compareTo(other.species);
     }
 
-//    @Override
-//    public String toString() {
-//        return "Animal{species='" + species + "', eyeColor='" + eyeColor + "', hasFur=" + hasFur + "}";
-//    }
-
-
     @Override
     public String toString() {
         return "Animal{" +
