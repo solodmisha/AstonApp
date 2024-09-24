@@ -7,10 +7,20 @@ public class Barrel implements Comparable<Barrel>, ObjectsCreated {
     private final String storedMaterial;
     private final String material;
 
+    private static Long count = 0L;
+    private final Long id;
+
     private Barrel(Builder builder) {
         this.volume = builder.volume;
         this.storedMaterial = builder.storedMaterial;
         this.material = builder.material;
+
+        count++;
+        this.id = getCount();
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public static class Builder {
@@ -45,7 +55,16 @@ public class Barrel implements Comparable<Barrel>, ObjectsCreated {
 
     @Override
     public String toString() {
-        return "Barrel{volume=" + volume + ", storedMaterial='" + storedMaterial + "', material='" + material + "'}";
+        return "Barrel{" +
+                "volume=" + volume +
+                ", storedMaterial='" + storedMaterial + '\'' +
+                ", material='" + material + '\'' +
+                ", id=" + id +
+                '}';
+    }
+
+    private Long getCount() {
+        return count;
     }
 }
 
