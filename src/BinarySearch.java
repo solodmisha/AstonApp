@@ -2,20 +2,23 @@ import java.util.List;
 
 public class BinarySearch {
     public static <T extends Comparable<T>> int binarySearch(List<T> sortedList, T key) {
-        int low = 0;
-        int high = sortedList.size() - 1;
+        if (sortedList.isEmpty()) {
+            return -1; // В коллекции нет элементов
+        }
+        int left = 0;
+        int right = sortedList.size() - 1;
 
-        while (low <= high) {
-            int mid = (low + high) / 2;
+        while (left <= right) {
+            int mid = right - (right - left) / 2;
             T midVal = sortedList.get(mid);
 
-            int cmp = midVal.compareTo(key);
-            if (cmp < 0) {
-                low = mid + 1;
-            } else if (cmp > 0) {
-                high = mid - 1;
+            if (midVal.compareTo(key) == 0) {
+                return mid;
+            }
+            if (midVal.compareTo(key) < 0) {
+                left = mid + 1;
             } else {
-                return mid; // найдено
+                right = mid - 1;
             }
         }
         return -1; // не найдено
