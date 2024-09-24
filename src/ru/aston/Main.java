@@ -26,8 +26,8 @@ public class Main {
                     System.out.println("Данные успешно заполнены: " + animals);
                     break;
                 case 2:
-                    TimSortStrategy<Animal> sorter = new TimSortStrategy<>();
-                    sorter.sort(animals);
+                    TimSortStrategy sorting = new TimSortStrategy();
+                    sorting.sort(animals, animals.size());
                     System.out.println("Отсортированный массив: " + animals);
                     break;
                 case 3:
