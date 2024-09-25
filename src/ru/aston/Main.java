@@ -1,6 +1,8 @@
 package ru.aston;
 
 import ru.aston.model.Animal;
+import ru.aston.searching.BinarySearch;
+import ru.aston.sorting.TimSortStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +35,10 @@ public class Main {
                     System.out.println("Отсортированный массив: " + animals);
                     break;
                 case 3:
-                    System.out.println("Введите вид животного для поиска:");
-                    String species = scanner.next();
-                    Animal key = new Animal.Builder().species(species).build();
+                    System.out.println("Введите id животного для поиска:");
+                    Long id = scanner.nextLong();
 
-                    int index = BinarySearch.binarySearch(animals, key);
+                    int index = BinarySearch.binarySearch(animals, id);
                     if (index != -1) {
                         System.out.println("Найдено: " + animals.get(index));
                     } else {

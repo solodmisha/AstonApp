@@ -1,9 +1,12 @@
-package ru.aston;
+package ru.aston.searching;
+
+import ru.aston.sorting.Sortable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class BinarySearch {
-    public static <T extends Comparable<T>> int binarySearch(List<T> sortedList, T key) {
+    public static <T extends Sortable> int binarySearch(List<T> sortedList, Long id) {
         if (sortedList.isEmpty()) {
             return -1; // В коллекции нет элементов
         }
@@ -14,10 +17,10 @@ public class BinarySearch {
             int mid = right - (right - left) / 2;
             T midVal = sortedList.get(mid);
 
-            if (midVal.compareTo(key) == 0) {
+            if (Objects.equals(midVal.getId(), id)) {
                 return mid;
             }
-            if (midVal.compareTo(key) < 0) {
+            if (midVal.getId() < id) {
                 left = mid + 1;
             } else {
                 right = mid - 1;

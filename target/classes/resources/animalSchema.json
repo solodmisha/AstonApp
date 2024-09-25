@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "species": {
+          "type": "string"
+        },
+        "eyeColor": {
+          "type": "string"
+        },
+        "hasFur": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "species",
+        "eyeColor",
+        "hasFur"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+Index: EvenSortingStrategy.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/EvenSortingStrategy.java b/EvenSortingStrategy.java
+new file mode 100644
+--- /dev/null	
++++ b/EvenSortingStrategy.java	
+@@ -0,0 +1,9 @@
++import java.util.List;
++
++public class EvenSortingStrategy implements SortStrategy {
++
++    @Override
++    public <T extends Comparable<T>> void sort(List<T> list, int n) {
++
++    }
++}
