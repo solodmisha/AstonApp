@@ -37,8 +37,8 @@ public class Main {
                 case 3:
                     System.out.println("Введите id животного для поиска:");
                     Long id = scanner.nextLong();
-
-                    int index = BinarySearch.binarySearch(animals, id);
+                    BinarySearch search = new BinarySearch();
+                    int index = search.binarySearch(animals, id);
                     if (index != -1) {
                         System.out.println("Найдено: " + animals.get(index));
                     } else {

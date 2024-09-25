@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class BinarySearch {
-    public static <T extends Sortable> int binarySearch(List<T> sortedList, Long id) {
+    public <T extends Sortable> int binarySearch(List<T> sortedList, Long id) {
         if (sortedList.isEmpty()) {
             return -1; // В коллекции нет элементов
         }

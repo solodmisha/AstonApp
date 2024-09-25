@@ -1,14 +1,18 @@
 package ru.aston.view;
 
 import ru.aston.controller.Controller;
+import ru.aston.searching.BinarySearch;
+import ru.aston.sorting.EvenSortingStrategy;
+import ru.aston.sorting.TimSortStrategy;
 
+import javax.crypto.spec.PSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class View {
     private static View instance;
-    List<Object> objectList;
+    List objectList;
 
     private Scanner scanner;
     private Controller controller;
@@ -102,5 +106,37 @@ public class View {
         scanner.nextLine();
     }
 
-    // методы сортировки, поиска
+    private void actions() {
+        while (true) {
+            System.out.println("1. To sort the collection");
+            System.out.println("2. To sort only even id's in the collection");
+            System.out.println("3. Find an object by id");
+            System.out.println("4. Exit");
+            int input = scanner.nextInt();
+
+            switch (input) {
+                case 1:
+                    TimSortStrategy timSortStrategy = new TimSortStrategy();
+                    timSortStrategy.sort(objectList, objectList.size());
+                    System.out.println(objectList);
+                    break;
+                case 2:
+                    EvenSortingStrategy evenSortingStrategy = new EvenSortingStrategy();
+                    evenSortingStrategy.sort(objectList, objectList.size());
+                    System.out.println(objectList);
+                    break;
+                case 3:
+                    System.out.println("Enter id: ");
+                    long id = scanner.nextLong();
+                    BinarySearch search = new BinarySearch();
+                    int index = search.binarySearch(objectList, id);
+                    System.out.println(objectList.get(index));
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Error: Incorrect value, please choose correct");
+            }
+        }
+    }
 }
