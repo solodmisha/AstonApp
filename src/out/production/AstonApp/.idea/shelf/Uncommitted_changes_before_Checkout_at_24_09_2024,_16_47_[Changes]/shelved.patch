@@ -1,0 +1,27 @@
+Index: SortableEntity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public abstract class SortableEntity implements Comparable<SortableEntity> {\n}\n
+===================================================================
+diff --git a/SortableEntity.java b/SortableEntity.java
+--- a/SortableEntity.java	
++++ b/SortableEntity.java	
+@@ -1,2 +1,2 @@
+-public abstract class SortableEntity implements Comparable<SortableEntity> {
++public abstract class SortableEntity {
+ }
+Index: Animal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Класс Животное\npublic class Animal implements Comparable<Animal> {\n    private final String species;\n    private final String eyeColor;\n    private final boolean hasFur;\n\n    private Animal(Builder builder) {\n        this.species = builder.species;\n        this.eyeColor = builder.eyeColor;\n        this.hasFur = builder.hasFur;\n    }\n\n    public static class Builder {\n        private String species;\n        private String eyeColor;\n        private boolean hasFur;\n\n        public Builder species(String species) {\n            this.species = species;\n            return this;\n        }\n\n        public Builder eyeColor(String eyeColor) {\n            this.eyeColor = eyeColor;\n            return this;\n        }\n\n        public Builder hasFur(boolean hasFur) {\n            this.hasFur = hasFur;\n            return this;\n        }\n\n        public Animal build() {\n            return new Animal(this);\n        }\n    }\n\n    @Override\n    public int compareTo(Animal other) {\n        return this.species.compareTo(other.species);\n    }\n\n    @Override\n    public String toString() {\n        return \"Animal{species='\" + species + \"', eyeColor='\" + eyeColor + \"', hasFur=\" + hasFur + \"}\";\n    }\n}\n
+===================================================================
+diff --git a/Animal.java b/Animal.java
+--- a/Animal.java	
++++ b/Animal.java	
+@@ -1,5 +1,5 @@
+ // Класс Животное
+-public class Animal implements Comparable<Animal> {
++public class Animal extends SortableEntity implements Comparable<Animal> {
+     private final String species;
+     private final String eyeColor;
+     private final boolean hasFur;

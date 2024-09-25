@@ -1,8 +1,9 @@
 package ru.aston.model;
 
+import ru.aston.sorting.Sortable;
 import ru.aston.model.factort.ObjectsCreated;
 
-public class Person implements Comparable<Person>, ObjectsCreated {
+public class Person implements Sortable, ObjectsCreated {
     private final String gender;
     private final int age;
     private final String lastName;
@@ -46,11 +47,6 @@ public class Person implements Comparable<Person>, ObjectsCreated {
         public Person build() {
             return new Person(this);
         }
-    }
-
-    @Override
-    public int compareTo(Person other) {
-        return this.lastName.compareTo(other.lastName);
     }
 
     @Override
