@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-public interface ValidStrategy <T> {
+public interface ValidStrategy<T> {
 
-    List<T> isValidImport (File file) throws IOException, ImportExeption, ImportExeption;
+    List<T> isValidImport(File file) throws IOException, ImportExeption, ImportExeption;
 }
