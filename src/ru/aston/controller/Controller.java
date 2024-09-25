@@ -23,7 +23,7 @@ public class Controller {
     }
 
 
-    public void addList(Integer typeObject, Integer typeImport, Integer sizeList)  {
+    public void addList(Integer typeObject, Integer typeImport, Integer sizeList) {
         ImportStrategyDownloads importStrategyDownloads = ImportStrategyHelper.getInstance().resolveDownloadsStrategy(typeImport);
         try {
             listObject = importStrategyDownloads.store(typeObject, sizeList);

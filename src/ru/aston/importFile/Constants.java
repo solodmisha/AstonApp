@@ -9,5 +9,5 @@ public class Constants {
     public final static Integer  BARREL = 3;
 
 
-    public final static String PATH_PERSON_SCHEMA = "personSchema.json";
+    public final static String PATH_PERSON_SCHEMA = "src/resources/personSchema.json";
 }

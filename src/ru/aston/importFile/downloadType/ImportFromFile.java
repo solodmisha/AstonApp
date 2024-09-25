@@ -16,18 +16,21 @@ import java.util.Scanner;
 public class ImportFromFile implements ImportStrategyDownloads {
     @Override
     public List<Object> store(Integer typeClass, Integer arraySize) throws IOException {
+
         System.out.print("Enter the file name: ");
         Scanner scanner = new Scanner(System.in);
-        String nameFile = scanner.nextLine();
+        String fileName = "src/resources/" + scanner.nextLine();
+        System.out.println("nameFile - " + fileName);
+
         ObjectMapper objectMapper = new ObjectMapper();
-        File jsonFile = new File(nameFile);
+        File jsonFile = new File(fileName);
 
         ValidStrategy validStrategy = ImportValidStategyHelper.getInstance().resolveValidStrategy(typeClass);
 
         List<Object> objectList = new ArrayList<>(arraySize);
         if (!validStrategy.isValidImport(jsonFile)) {
             objectList = Arrays.asList(objectMapper.readValue(jsonFile, Object[].class));
-            System.out.println("Person.class - " + objectList);
+            System.out.println("objectList -  " + objectList);
         } else {
             try {
                 throw new ImportExeption("Import error!");

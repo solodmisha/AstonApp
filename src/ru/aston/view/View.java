@@ -25,7 +25,15 @@ public class View {
     public void run() {
         int menuAction = -1;
         System.out.println("***** ASTON PROJECT *****");
-        while (menuAction != 5) {
+        System.out.println();
+        System.out.println("Choose action:");
+        System.out.println("1. Will you choose an object of which class you will create? (barrel, animal, person)");
+        System.out.println("2. Exit");
+
+        System.out.print("\nAction: ");
+        String input = scanner.nextLine();
+        menuAction = Integer.parseInt(input);
+        while (menuAction != 2) {
             menuAction = runMenu();
 
             switch (menuAction) {
@@ -54,9 +62,9 @@ public class View {
     }
 
     private void selectObject() {
-        System.out.println("1. Barrel.");
+        System.out.println("1. Person.");
         System.out.println("2. Animal. ");
-        System.out.println("3. Person. ");
+        System.out.println("3. Barrel. ");
         System.out.print("\nAction: ");
         String input = scanner.nextLine();
         Integer typeObject = Integer.valueOf(input);
@@ -72,20 +80,21 @@ public class View {
         System.out.println("Enter the number of object. ");
         System.out.print("\nAction: ");
         Integer numberObject = null;
-        boolean valdSize = true;
-        while (valdSize) {
+        boolean validSize = true;
+        while (validSize) {
             Integer input3 = scanner.nextInt();
             numberObject = Integer.valueOf(input3);
             if (numberObject < 0) {
                 System.out.println("The size of the array cannot be a negative number.");
-                valdSize = true;
+                validSize = true;
             } else {
-                valdSize = false;
+                validSize = false;
             }
         }
 
         controller.addList(typeObject, typeImport, numberObject);
 
+        scanner.nextLine();
     }
 
     // методы сортировки, поиска
