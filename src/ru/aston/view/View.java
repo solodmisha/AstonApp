@@ -2,10 +2,13 @@ package ru.aston.view;
 
 import ru.aston.controller.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class View {
     private static View instance;
+    List<Object> objectList;
 
     private Scanner scanner;
     private Controller controller;
@@ -20,6 +23,7 @@ public class View {
     private View() {
         this.scanner = new Scanner(System.in);
         this.controller = Controller.getInstance();
+        this.objectList = new ArrayList<>();
     }
 
     public void run() {
@@ -92,7 +96,8 @@ public class View {
             }
         }
 
-        controller.addList(typeObject, typeImport, numberObject);
+        objectList = controller.addList(typeObject, typeImport, numberObject);
+        System.out.println(objectList);
 
         scanner.nextLine();
     }

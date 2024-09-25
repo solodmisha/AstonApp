@@ -5,20 +5,20 @@
     {
       "type": "object",
       "properties": {
-        "gender": {
+        "volume": {
+          "type": "number"
+        },
+        "storedMaterial": {
           "type": "string"
         },
-        "age": {
-          "type": "integer"
-        },
-        "lastName": {
+        "material": {
           "type": "string"
         }
       },
       "required": [
-        "gender",
-        "age",
-        "lastName"
+        "volume",
+        "storedMaterial",
+        "material"
       ]
     }
   ]

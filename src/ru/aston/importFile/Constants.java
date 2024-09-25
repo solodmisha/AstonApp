@@ -10,4 +10,6 @@ public class Constants {
 
 
     public final static String PATH_PERSON_SCHEMA = "src/resources/personSchema.json";
+    public final static String PATH_BARREL_SCHEMA = "src/resources/barrelSchema.json";
+    public final static String PATH_ANIMAL_SCHEMA = "src/resources/animalSchema.json";
 }

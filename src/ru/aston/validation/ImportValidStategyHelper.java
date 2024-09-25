@@ -18,7 +18,8 @@ public class ImportValidStategyHelper {
     public ImportValidStategyHelper() {
         this.validStrategyMap = new HashMap<>();
         this.validStrategyMap.put(Constants. PERSON, new ValidPerson());
-        //this.validStrategyMap
+        this.validStrategyMap.put(Constants.ANIMAL, new ValidAnimal());
+        this.validStrategyMap.put(Constants.BARREL, new ValidBarrel());
     }
 
        public ValidPerson resolveValidStrategy(Integer strategyID) {

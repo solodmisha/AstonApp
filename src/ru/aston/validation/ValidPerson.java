@@ -8,15 +8,22 @@ import com.networknt.schema.SpecVersion;
 import com.networknt.schema.ValidationMessage;
 import ru.aston.importFile.Constants;
 import org.apache.commons.io.FileUtils;
+import ru.aston.importFile.ImportExeption;
+import ru.aston.model.Person;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 public class ValidPerson implements ValidStrategy {
     @Override
-    public Boolean isValidImport(File personJson) throws IOException {
+    public List<Person> isValidImport(File personJson) throws IOException, ImportExeption {
+        List<Person> personList = new ArrayList<>();
+
         ObjectMapper objectMapper = new ObjectMapper();
         JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
 
@@ -28,10 +35,10 @@ public class ValidPerson implements ValidStrategy {
         JsonSchema jsonSchema = schemaFactory.getSchema(personSchemaString);
         Set<ValidationMessage> validationResult = jsonSchema.validate(personJsonNode);
 
-        if (validationResult.isEmpty()) {
-            return true;
-        } else {
-            return false;
+        if (!validationResult.isEmpty()) {
+            throw new ImportExeption("Import error!");
         }
+        personList = Arrays.asList(objectMapper.readValue(personJson, Person[].class));
+        return personList;
     }
 }
