@@ -1,20 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "type": "object",
-  "properties": {
-    "gender": {
-      "type": "string"
-    },
-    "age": {
-      "type": "integer"
-    },
-    "lastName": {
-      "type": "string"
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "gender": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        },
+        "lastName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "gender",
+        "age",
+        "lastName"
+      ]
     }
-  },
-  "required": [
-    "gender",
-    "age",
-    "lastName"
   ]
 }

@@ -1,4 +1,4 @@
-package ru.aston.validation;
+package ru.aston.validation.validFile;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

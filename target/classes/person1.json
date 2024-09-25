@@ -1,1 +1,12 @@
-[{"gender":"male","age":20,"lastName":"Ivanov"},{"gender":"male","age":30,"lastName":"FFF"}]
+[
+  {
+    "gender": "male",
+    "age": 20,
+    "lastName": "Ivanov"
+  },
+  {
+    "gender": "male",
+    "age": 30,
+    "lastName": "FFF"
+  }
+]

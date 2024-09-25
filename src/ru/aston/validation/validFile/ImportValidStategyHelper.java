@@ -1,4 +1,4 @@
-package ru.aston.validation;
+package ru.aston.validation.validFile;
 
 import ru.aston.importFile.Constants;
 

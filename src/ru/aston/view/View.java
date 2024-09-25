@@ -4,8 +4,6 @@ import ru.aston.controller.Controller;
 import ru.aston.searching.BinarySearch;
 import ru.aston.sorting.EvenSortingStrategy;
 import ru.aston.sorting.TimSortStrategy;
-
-import javax.crypto.spec.PSource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -33,14 +31,14 @@ public class View {
     public void run() {
         int menuAction = -1;
         System.out.println("***** ASTON PROJECT *****");
-        System.out.println();
-        System.out.println("Choose action:");
-        System.out.println("1. Will you choose an object of which class you will create? (barrel, animal, person)");
-        System.out.println("2. Exit");
 
-        System.out.print("\nAction: ");
-        String input = scanner.nextLine();
-        menuAction = Integer.parseInt(input);
+//        System.out.println("Choose action:");
+//        System.out.println("1. Will you choose an object of which class you will create? (barrel, animal, person)");
+//        System.out.println("2. Exit");
+//
+//        System.out.print("\nAction: ");
+//        String input = scanner.nextLine();
+//        menuAction = Integer.parseInt(input);
         while (menuAction != 2) {
             menuAction = runMenu();
 
@@ -90,11 +88,9 @@ public class View {
         Integer numberObject = null;
         boolean validSize = true;
         while (validSize) {
-            Integer input3 = scanner.nextInt();
-            numberObject = Integer.valueOf(input3);
+            numberObject = scanner.nextInt();
             if (numberObject < 0) {
                 System.out.println("The size of the array cannot be a negative number.");
-                validSize = true;
             } else {
                 validSize = false;
             }
@@ -102,7 +98,8 @@ public class View {
 
         objectList = controller.addList(typeObject, typeImport, numberObject);
         System.out.println(objectList);
-
+        System.out.println();
+        actions();
         scanner.nextLine();
     }
 

@@ -1,19 +1,26 @@
 package ru.aston.importFile.downloadType;
 
 import ru.aston.importFile.ImportStrategyDownloads;
-import ru.aston.validation.ImportValidStategyHelper;
-import ru.aston.validation.ValidStrategy;
+import ru.aston.validation.validConsole.ImportValidConsoleStrategyHelper;
+import ru.aston.validation.validConsole.ValidStrategyConsole;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImportFromConsole implements ImportStrategyDownloads {
+public class ImportFromConsole implements ImportStrategyDownloads<Object> {
     @Override
     public List<Object> store(Integer typeClass, Integer arraySize) throws IOException {
-        List<Object> objectList = new ArrayList<>(arraySize);
-        ValidStrategy validStrategy = ImportValidStategyHelper.getInstance().resolveValidStrategy(typeClass);
+        int size = 0;
+        List<Object> objectList = new ArrayList<>();
+        ImportValidConsoleStrategyHelper importValidConsoleStrategyHelper = ImportValidConsoleStrategyHelper.getInstance();
+        ValidStrategyConsole validStrategyConsole = importValidConsoleStrategyHelper.resolveValidConsoleStrategy(typeClass);
 
-        return null;
+        while (size!=arraySize){
+            objectList.add(validStrategyConsole.Import());
+            size++;
+        }
+        return objectList;
     }
 }
