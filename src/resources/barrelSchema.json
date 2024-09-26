@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number"
+        },
+        "storedMaterial": {
+          "type": "string"
+        },
+        "material": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "volume",
+        "storedMaterial",
+        "material",
+        "id"
+      ]
+    }
+  ]
+}

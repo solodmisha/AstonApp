@@ -1,0 +1,26 @@
+[
+  {
+    "volume": 200.0,
+    "storedMaterial": "liqid",
+    "material": "plastic",
+    "id": 3
+  },
+  {
+    "volume": 100.0,
+    "storedMaterial": "liqid",
+    "material": "metall",
+    "id": 4
+  },
+  {
+    "volume": 300.0,
+    "storedMaterial": "liqid",
+    "material": "wood",
+    "id": 2
+  },
+  {
+    "volume": 50.0,
+    "storedMaterial": "liqid",
+    "material": "glass",
+    "id": 1
+  }
+]
