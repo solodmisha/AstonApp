@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class ValidPerson implements ValidStrategy {
+public class ValidPerson implements ValidStrategy<Person> {
     @Override
     public List<Person> isValidImport(File personJson) throws IOException, ImportExeption {
         List<Person> personList = new ArrayList<>();

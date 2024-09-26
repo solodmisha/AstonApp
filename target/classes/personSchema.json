@@ -13,12 +13,16 @@
         },
         "lastName": {
           "type": "string"
+        },
+        "id": {
+          "type": "integer"
         }
       },
       "required": [
         "gender",
         "age",
-        "lastName"
+        "lastName",
+        "id"
       ]
     }
   ]

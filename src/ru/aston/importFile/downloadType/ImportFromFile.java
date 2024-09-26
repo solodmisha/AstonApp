@@ -15,7 +15,7 @@ public class ImportFromFile implements ImportStrategyDownloads<Object> {
     public List<Object> store(Integer typeClass, Integer arraySize) {
         System.out.print("Enter the file name: ");
         Scanner scanner = new Scanner(System.in);
-        String nameFile = "src/resources/" + scanner.nextLine();
+        String nameFile = "src/resources/test/" + scanner.nextLine();
 
         File jsonFile = new File(nameFile);
 
@@ -24,7 +24,6 @@ public class ImportFromFile implements ImportStrategyDownloads<Object> {
         List<Object> objectList = null;
         try {
             objectList = validStrategy.isValidImport(jsonFile);
-            System.out.println(objectList);
         } catch (ImportExeption | IOException e) {
             System.out.println(e.getMessage());
         }

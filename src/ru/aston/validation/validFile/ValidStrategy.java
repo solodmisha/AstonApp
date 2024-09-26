@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ValidStrategy<T> {
 
-    List<T> isValidImport(File file) throws IOException,  ImportExeption;
+    List<T> isValidImport(File file) throws IOException, ImportExeption;
 }

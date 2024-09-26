@@ -13,12 +13,16 @@
         },
         "material": {
           "type": "string"
+        },
+        "id": {
+          "type": "integer"
         }
       },
       "required": [
         "volume",
         "storedMaterial",
-        "material"
+        "material",
+        "id"
       ]
     }
   ]

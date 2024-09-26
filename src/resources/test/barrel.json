@@ -1,0 +1,14 @@
+[
+  {
+    "volume": 200.0,
+    "storedMaterial": "liqid",
+    "material": "plastic",
+    "id": 1
+  },
+  {
+    "volume": 100.0,
+    "storedMaterial": "liqid",
+    "material": "metall",
+    "id": 1
+  }
+]

@@ -5,12 +5,12 @@ import ru.aston.model.factort.ObjectsCreated;
 
 // Класс Животное
 public class Animal implements Sortable, ObjectsCreated {
-    private final String species;
-    private final String eyeColor;
-    private final boolean hasFur;
+    private String species;
+    private String eyeColor;
+    private boolean hasFur;
 
     private static Long count = 0L;
-    private final Long id;
+    private Long id;
 
     private Animal(Builder builder) {
         this.species = builder.species;
@@ -19,6 +19,37 @@ public class Animal implements Sortable, ObjectsCreated {
 
         count++;
         this.id = getCount();
+    }
+
+    public Animal() {
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public String getEyeColor() {
+        return eyeColor;
+    }
+
+    public void setEyeColor(String eyeColor) {
+        this.eyeColor = eyeColor;
+    }
+
+    public boolean isHasFur() {
+        return hasFur;
+    }
+
+    public void setHasFur(boolean hasFur) {
+        this.hasFur = hasFur;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {

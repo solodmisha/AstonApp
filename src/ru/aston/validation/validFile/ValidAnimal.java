@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class ValidAnimal implements ValidStrategy{
+public class ValidAnimal implements ValidStrategy<Animal>{
     @Override
     public List<Animal> isValidImport(File animalJson) throws IOException, ImportExeption {
         List<Animal> animalList = new ArrayList<>();
@@ -27,7 +27,7 @@ public class ValidAnimal implements ValidStrategy{
         ObjectMapper objectMapper = new ObjectMapper();
         JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
 
-        File personSchemaFile = new File(Constants.PATH_PERSON_SCHEMA);
+        File personSchemaFile = new File(Constants.PATH_ANIMAL_SCHEMA);
         String personSchemaString = FileUtils.readFileToString(personSchemaFile, StandardCharsets.UTF_8);
 
         JsonNode personJsonNode = objectMapper.readTree(animalJson);

@@ -33,13 +33,6 @@ public class View {
         int menuAction = -1;
         System.out.println("***** ASTON PROJECT *****");
 
-//        System.out.println("Choose action:");
-//        System.out.println("1. Will you choose an object of which class you will create? (barrel, animal, person)");
-//        System.out.println("2. Exit");
-//
-//        System.out.print("\nAction: ");
-//        String input = scanner.nextLine();
-//        menuAction = Integer.parseInt(input);
         while (menuAction != 2) {
             menuAction = runMenu();
 
@@ -98,7 +91,7 @@ public class View {
         }
 
         objectList = controller.addList(typeObject, typeImport, numberObject);
-        System.out.println(objectList);
+        objectList.forEach(System.out::println);
         System.out.println();
         actions();
         scanner.nextLine();
@@ -126,11 +119,11 @@ public class View {
                     System.out.println(objectList);
                     break;
                 case 3:
-                    if(!isSorted) {
+                    if (!isSorted) {
                         timSortStrategy.sort(objectList, objectList.size());
                         isSorted = true;
                     }
-                    while(true) {
+                    while (true) {
                         System.out.println("Enter id: ");
                         long id = scanner.nextLong();
                         if (id < 0) {

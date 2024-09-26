@@ -22,7 +22,7 @@ public class ImportValidStategyHelper {
         this.validStrategyMap.put(Constants.BARREL, new ValidBarrel());
     }
 
-       public ValidPerson resolveValidStrategy(Integer strategyID) {
-        return (ValidPerson) this.validStrategyMap.get(strategyID);
+       public ValidStrategy resolveValidStrategy(Integer strategyID) {
+        return  this.validStrategyMap.get(strategyID);
     }
 }

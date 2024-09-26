@@ -13,12 +13,16 @@
         },
         "hasFur": {
           "type": "boolean"
+        },
+        "id": {
+          "type": "integer"
         }
       },
       "required": [
         "species",
         "eyeColor",
-        "hasFur"
+        "hasFur",
+        "id"
       ]
     }
   ]

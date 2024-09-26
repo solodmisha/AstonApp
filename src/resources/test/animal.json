@@ -1,0 +1,14 @@
+[
+  {
+    "species": "fish",
+    "eyeColor": "grey",
+    "hasFur": false,
+    "id": 1
+  },
+  {
+    "species": "reptile",
+    "eyeColor": "green",
+    "hasFur": false,
+    "id": 2
+  }
+]

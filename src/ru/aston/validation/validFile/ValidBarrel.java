@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class ValidBarrel implements ValidStrategy{
+public class ValidBarrel implements ValidStrategy<Barrel>{
     @Override
     public List<Barrel> isValidImport(File barrelJson) throws IOException, ImportExeption {
         List<Barrel> barrelList = new ArrayList<>();
@@ -27,7 +27,7 @@ public class ValidBarrel implements ValidStrategy{
         ObjectMapper objectMapper = new ObjectMapper();
         JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V4);
 
-        File personSchemaFile = new File(Constants.PATH_PERSON_SCHEMA);
+        File personSchemaFile = new File(Constants.PATH_BARREL_SCHEMA);
         String personSchemaString = FileUtils.readFileToString(personSchemaFile, StandardCharsets.UTF_8);
 
         JsonNode personJsonNode = objectMapper.readTree(barrelJson);

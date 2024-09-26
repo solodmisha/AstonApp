@@ -4,12 +4,12 @@ import ru.aston.sorting.Sortable;
 import ru.aston.model.factort.ObjectsCreated;
 
 public class Person implements Sortable, ObjectsCreated {
-    private final String gender;
-    private final int age;
-    private final String lastName;
+    private String gender;
+    private int age;
+    private String lastName;
 
     private static Long count = 0L;
-    private final Long id;
+    private  Long id;
 
     private Person(Builder builder) {
         this.gender = builder.gender;
@@ -18,6 +18,37 @@ public class Person implements Sortable, ObjectsCreated {
 
         count++;
         this.id = getCount();
+    }
+
+    public Person() {
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {
