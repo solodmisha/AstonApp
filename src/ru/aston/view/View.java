@@ -105,17 +105,19 @@ public class View {
     }
 
     private void actions() {
+        boolean isSorted = false;
         while (true) {
             System.out.println("1. To sort the collection");
             System.out.println("2. To sort only even id's in the collection");
             System.out.println("3. Find an object by id");
             System.out.println("4. Exit");
             int input = scanner.nextInt();
+            TimSortStrategy timSortStrategy = new TimSortStrategy();
 
             switch (input) {
                 case 1:
-                    TimSortStrategy timSortStrategy = new TimSortStrategy();
                     timSortStrategy.sort(objectList, objectList.size());
+                    isSorted = true;
                     System.out.println(objectList);
                     break;
                 case 2:
@@ -124,6 +126,10 @@ public class View {
                     System.out.println(objectList);
                     break;
                 case 3:
+                    if(!isSorted) {
+                        timSortStrategy.sort(objectList, objectList.size());
+                        isSorted = true;
+                    }
                     while(true) {
                         System.out.println("Enter id: ");
                         long id = scanner.nextLong();
