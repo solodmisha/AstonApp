@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AstonApp.iml" filepath="$PROJECT_DIR$/AstonApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/astonTest.iml" filepath="$PROJECT_DIR$/astonTest.iml" />
     </modules>
   </component>
 </project>

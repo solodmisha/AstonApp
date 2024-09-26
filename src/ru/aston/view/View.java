@@ -6,6 +6,7 @@ import ru.aston.sorting.EvenSortingStrategy;
 import ru.aston.sorting.TimSortStrategy;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -90,8 +91,14 @@ public class View {
             }
         }
 
-        objectList = controller.addList(typeObject, typeImport, numberObject);
-        objectList.forEach(System.out::println);
+        while (true) {
+            objectList = controller.addList(typeObject, typeImport, numberObject);
+            try {
+                objectList.forEach(System.out::println);
+                break;
+            } catch (NullPointerException e) {
+            }
+        }
         System.out.println();
         actions();
         scanner.nextLine();
@@ -105,18 +112,21 @@ public class View {
             System.out.println("3. Find an object by id");
             System.out.println("4. Exit");
             int input = scanner.nextInt();
+
             TimSortStrategy timSortStrategy = new TimSortStrategy();
 
             switch (input) {
                 case 1:
                     timSortStrategy.sort(objectList, objectList.size());
                     isSorted = true;
-                    System.out.println(objectList);
+                    objectList.forEach(System.out::println);
+                    System.out.println();
                     break;
                 case 2:
                     EvenSortingStrategy evenSortingStrategy = new EvenSortingStrategy();
                     evenSortingStrategy.sort(objectList, objectList.size());
-                    System.out.println(objectList);
+                    objectList.forEach(System.out::println);
+                    System.out.println();
                     break;
                 case 3:
                     if (!isSorted) {
@@ -131,6 +141,7 @@ public class View {
                             System.out.println();
                         } else if (id >= objectList.size()) {
                             System.out.println("Id is greater than collection size");
+                            System.out.println("Try again");
                         } else {
                             BinarySearch search = new BinarySearch();
                             int index = search.binarySearch(objectList, id);
@@ -138,6 +149,7 @@ public class View {
                                 System.out.println(objectList.get(index));
                             } else {
                                 System.out.println("Id is not found");
+                                System.out.println("Try again");
                             }
                             break;
                         }

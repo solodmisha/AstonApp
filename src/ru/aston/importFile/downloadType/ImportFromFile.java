@@ -6,6 +6,7 @@ import ru.aston.validation.validFile.ImportValidStategyHelper;
 import ru.aston.validation.validFile.ValidStrategy;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -17,10 +18,8 @@ public class ImportFromFile implements ImportStrategyDownloads<Object> {
         Scanner scanner = new Scanner(System.in);
         String nameFile = "src/resources/test/" + scanner.nextLine();
 
-        File jsonFile = new File(nameFile);
-
+        File jsonFile = new File(nameFile);;
         ValidStrategy validStrategy = ImportValidStategyHelper.getInstance().resolveValidStrategy(typeClass);
-
         List<Object> objectList = null;
         try {
             objectList = validStrategy.isValidImport(jsonFile);
