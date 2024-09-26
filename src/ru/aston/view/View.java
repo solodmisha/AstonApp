@@ -4,6 +4,7 @@ import ru.aston.controller.Controller;
 import ru.aston.searching.BinarySearch;
 import ru.aston.sorting.EvenSortingStrategy;
 import ru.aston.sorting.TimSortStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -123,11 +124,25 @@ public class View {
                     System.out.println(objectList);
                     break;
                 case 3:
-                    System.out.println("Enter id: ");
-                    long id = scanner.nextLong();
-                    BinarySearch search = new BinarySearch();
-                    int index = search.binarySearch(objectList, id);
-                    System.out.println(objectList.get(index));
+                    while(true) {
+                        System.out.println("Enter id: ");
+                        long id = scanner.nextLong();
+                        if (id < 0) {
+                            System.out.println("Please enter the correct index");
+                            System.out.println();
+                        } else if (id >= objectList.size()) {
+                            System.out.println("Id is greater than collection size");
+                        } else {
+                            BinarySearch search = new BinarySearch();
+                            int index = search.binarySearch(objectList, id);
+                            if (index >= 0) {
+                                System.out.println(objectList.get(index));
+                            } else {
+                                System.out.println("Id is not found");
+                            }
+                            break;
+                        }
+                    }
                     break;
                 case 4:
                     return;
