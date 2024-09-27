@@ -1,10 +1,9 @@
 package ru.aston.model;
 
 import ru.aston.sorting.Sortable;
-import ru.aston.model.factort.ObjectsCreated;
 
 // Класс Животное
-public class Animal implements Sortable, ObjectsCreated {
+public class Animal implements Sortable {
     private String species;
     private String eyeColor;
     private boolean hasFur;

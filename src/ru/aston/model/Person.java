@@ -1,9 +1,8 @@
 package ru.aston.model;
 
 import ru.aston.sorting.Sortable;
-import ru.aston.model.factort.ObjectsCreated;
 
-public class Person implements Sortable, ObjectsCreated {
+public class Person implements Sortable {
     private String gender;
     private int age;
     private String lastName;

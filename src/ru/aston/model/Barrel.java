@@ -1,9 +1,8 @@
 package ru.aston.model;
 
 import ru.aston.sorting.Sortable;
-import ru.aston.model.factort.ObjectsCreated;
 
-public class Barrel implements Sortable, ObjectsCreated {
+public class Barrel implements Sortable {
     private double volume;
     private String storedMaterial;
     private String material;

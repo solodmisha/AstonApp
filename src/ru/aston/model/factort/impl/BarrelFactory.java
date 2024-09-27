@@ -2,7 +2,6 @@ package ru.aston.model.factort.impl;
 
 import ru.aston.model.Barrel;
 import ru.aston.model.factort.ObjectFactory;
-import ru.aston.model.factort.ObjectsCreated;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +13,7 @@ public class BarrelFactory implements ObjectFactory {
     private Random random = new Random();
 
     @Override
-    public ObjectsCreated create() {
+    public Object create() {
 
         return new Barrel.Builder()
                 .volume(getVolume())
