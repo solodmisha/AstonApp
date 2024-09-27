@@ -1,6 +1,13 @@
 # Compiled class file
 *.class
 
+*.iml
+
+# Ignore sirectories
+/.idea
+./src/out
+./target
+
 # Log file
 *.log
 

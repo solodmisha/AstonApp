@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26503144-6351-4de2-9820-0202e6b0dc8d" name="Changes" comment="add sorting and binary search">
-      <change beforePath="$PROJECT_DIR$/src/resources/test/animal.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/test/animal.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/test/barrel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/test/barrel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/test/person.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/test/person.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/aston/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/aston/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/aston/sorting/TimSortStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/aston/sorting/TimSortStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/aston/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/aston/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
