@@ -78,7 +78,7 @@ public class TimSortStrategy implements SortStrategy {
     }
 
     public <T extends Sortable> void sort(List<T> list, int n) {
-        int minRun = minRunLength(MIN_MERGE);
+        int minRun = n > MIN_MERGE ? minRunLength(MIN_MERGE) : n; // Установка минимальной длины RUN
 
         // Сортировка отдельных подмассивов по размеру RUN
         for (int i = 0; i < n; i += minRun) {
@@ -87,7 +87,6 @@ public class TimSortStrategy implements SortStrategy {
         }
 
         // Начинаем слияние с размера RUN (или 32)
-
         for (int size = minRun; size < n; size = 2 * size) {
             for (int left = 0; left < n;
                  left += 2 * size) {

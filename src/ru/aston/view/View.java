@@ -5,10 +5,7 @@ import ru.aston.searching.BinarySearch;
 import ru.aston.sorting.EvenSortingStrategy;
 import ru.aston.sorting.TimSortStrategy;
 
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class View {
     private static View instance;
@@ -106,6 +103,18 @@ public class View {
 
     private void actions() {
         boolean isSorted = false;
+
+        System.out.println("Do you want to shuffle the collection?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int answer = scanner.nextInt();
+        if (answer == 1) {
+            Collections.shuffle(objectList);
+            objectList.forEach(System.out::println);
+            System.out.println("This collection is shuffle");
+            System.out.println();
+        }
+
         while (true) {
             System.out.println("1. To sort the collection");
             System.out.println("2. To sort only even id's in the collection");
