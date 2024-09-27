@@ -15,11 +15,12 @@ public class AnimalFactory implements ObjectFactory {
     @Override
     public Object create() {
 
-        return new Animal.Builder()
-                .species(geTypeAnimals())
-                .eyeColor(getEyeColor())
-                .hasFur(geTypeAnimals().equals("Млекопитающие"))
-                .build();
+        Animal animal = new Animal();
+        animal.setSpecies(geTypeAnimals());
+        animal.setEyeColor(getEyeColor());
+        animal.setHasFur(animal.getSpecies().equals("Млекопитающие"));
+
+        return animal;
     }
 
     private String geTypeAnimals() {

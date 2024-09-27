@@ -15,11 +15,13 @@ public class PersonFactory implements ObjectFactory {
     @Override
     public Object create() {
 
-        return new Person.Builder()
-                .gender(getGender())
-                .age(getAge())
-                .lastName((getGender().equals("Женский")) ? getLastName() + "a" : getLastName())
-                .build();
+        Person person = new Person();
+        person.setGender(getGender());
+        person.setAge(getAge());
+        person.setLastName(
+                (person.getGender().equals("Женский")) ? getLastName() + "а" : getLastName()
+        );
+        return person;
     }
 
     private String getGender() {
