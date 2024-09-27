@@ -20,6 +20,8 @@ public class Person implements Sortable {
     }
 
     public Person() {
+        count++;
+        this.id = getCount();
     }
 
     public String getGender() {

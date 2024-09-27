@@ -21,6 +21,8 @@ public class Animal implements Sortable {
     }
 
     public Animal() {
+        count++;
+        this.id = getCount();
     }
 
     public String getSpecies() {

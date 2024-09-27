@@ -20,6 +20,8 @@ public class Barrel implements Sortable {
     }
 
     public Barrel() {
+        count++;
+        this.id = getCount();
     }
 
     public double getVolume() {
